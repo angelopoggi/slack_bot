@@ -4,6 +4,7 @@ import datetime
 import time
 import random
 import dad_jokes
+import schedule
 
 
 def bill_bot():
@@ -14,16 +15,15 @@ def bill_bot():
     if currentTime.hour == 16:
         client.chat_postMessage(channel='#provisioninginternal', text="Night Everyone!")
     randomTime = random.randrange(9,15,1)
-    if currentTime.hour == datetime:
-        currentJoke = dad_jokes()
-        client.chat_postMessage(channel='#provisioninginternal', text=currentJoke['body'][0]['setup'])
+    if currentTime.hour == randomTime:
+        currentJoke = dad_jokes.dad_jokes()
+        client.chat_postMessage(channel='#provisioninginternal', text=currentJoke[0])
         time.sleep(2)
-        client.chat_postMessage(channel='#provisioninginternal', text=print(currentJoke['body'][0]['punchline']))
+        client.chat_postMessage(channel='#provisioninginternal', text=currentJoke[1])
 
 if __name__== '__main__':
-    bill_bot()
-
-
-
-
+    schedule.every().day.at("09:00:").do(bill_bot())
+    while True:
+        schedule.run_pending()
+        time.sleep(60)
 
