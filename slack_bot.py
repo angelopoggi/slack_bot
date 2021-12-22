@@ -29,7 +29,7 @@ if __name__== '__main__':
     randomTime = schedule.every().day.at("09:00:00").do(random_num_gen)
     if randomTime == 9:
         schedule.every().day.at(f"0{randomTime}:00:00").do(bill_bot,random=True)
-    elif randomTime in random(10,15):
+    elif randomTime in range(10,15):
         schedule.every().day.at(f"{randomTime}:00:00").do(bill_bot,random=True)
     #Evening run
     schedule.every().day.at("17:00:00").do(bill_bot)
