@@ -26,7 +26,7 @@ def random_num_gen():
 if __name__== '__main__':
     #Morning run
     schedule.every().day.at("09:00:00").do(bill_bot)
-    randomTime = schedule.every().day.at("09:43:00").do(random_num_gen)
+    randomTime = random_num_gen()
     print(randomTime)
     if randomTime == 9:
         schedule.every().day.at(f"0{randomTime}:00:00").do(bill_bot,random=True)
