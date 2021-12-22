@@ -9,4 +9,3 @@ except:
     raise ("Could not open .env file; please make sure it exsists!")
 
 SLACK_TOKEN = os.environ['SLACK_TOKEN']
-DAD_API = os.environ['DAD_API']

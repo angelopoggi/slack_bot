@@ -1,5 +1,3 @@
-import requests
-from config import DAD_API
 import random
 
 def dad_jokes():
